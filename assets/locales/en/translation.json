@@ -1,0 +1,8 @@
+{
+  "language": "English",
+  "Hello": "Hello",
+  "price": "Price: {{price, currency}}",
+  "key1_one": "{{count}} item",
+  "key1_other": "{{count}} items",
+  "key1_interval": "(1)[one item];(2-7)[a few items];(7-inf)[a lot of items];"
+}

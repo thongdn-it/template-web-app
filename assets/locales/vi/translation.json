@@ -1,0 +1,8 @@
+{
+  "language": "Tiếng Việt",
+  "Hello": "Xin chào",
+  "price": "Giá: {{price, currency}}",
+  "key1_one": "{{count}} sp",
+  "key1_other": "{{count}} sp",
+  "key1_interval": "(1)[một sp];(2-7)[một vài sp];(7-inf)[nhiều sp];"
+}

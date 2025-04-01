@@ -2,7 +2,17 @@
 
 ## Features
 
+- NextJS.
+- shadcn/ui.
+- lucide-react.
+
 ## Tech Stack
+
+| Library      | Version | Description                      |
+| ------------ | ------- | -------------------------------- |
+| NextJS       | v15     |                                  |
+| shadcn/ui    | v4      | `pnpm dlx shadcn@latest add ...` |
+| lucide-react |         |                                  |
 
 ## Folder Structure
 
