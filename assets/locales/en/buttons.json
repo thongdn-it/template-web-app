@@ -1,4 +1,7 @@
 {
   "change-language": "Change language",
-  "change-theme": "Change theme"
+  "change-theme": "Change theme",
+  "settings": "Settings",
+  "signin": "Sign in",
+  "signout": "Sign out"
 }

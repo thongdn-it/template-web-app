@@ -1,6 +1,7 @@
 "use client";
 
 import { ThemeProvider } from "./ThemeProvider";
+import { QueryProvider } from "./QueryProvider";
 import { LanguageProvider } from "./LanguageProvider";
 
 export const AppProvider = ({
@@ -10,7 +11,9 @@ export const AppProvider = ({
 }>) => {
   return (
     <ThemeProvider>
-      <LanguageProvider>{children}</LanguageProvider>
+      <LanguageProvider>
+        <QueryProvider>{children}</QueryProvider>
+      </LanguageProvider>
     </ThemeProvider>
   );
 };

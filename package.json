@@ -7,12 +7,18 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "clear": "rm -rf .next node_modules pnpm-lock.yaml"
+    "clear": "rm -rf .next node_modules pnpm-lock.yaml",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
+    "@next/env": "^15.2.4",
     "@radix-ui/react-dropdown-menu": "^2.1.6",
     "@radix-ui/react-slot": "^1.1.2",
     "@radix-ui/react-switch": "^1.1.3",
+    "@tanstack/react-query": "^5.71.1",
+    "axios": "^1.8.4",
+    "axios-curlirize-ts": "^1.0.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
@@ -20,9 +26,11 @@
     "i18next-browser-languagedetector": "^8.0.4",
     "i18next-intervalplural-postprocessor": "^3.0.0",
     "intl-pluralrules": "^2.0.1",
+    "js-cookie": "^3.0.5",
     "lucide-react": "^0.484.0",
     "next": "15.2.4",
     "next-themes": "^0.4.6",
+    "qs": "^6.14.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-i18next": "^15.4.1",
@@ -30,16 +38,34 @@
     "tw-animate-css": "^1.2.4"
   },
   "devDependencies": {
+    "@chromatic-com/storybook": "^3.2.6",
     "@eslint/eslintrc": "^3",
+    "@storybook/addon-essentials": "^8.6.11",
+    "@storybook/addon-interactions": "^8.6.11",
+    "@storybook/addon-links": "^8.6.11",
+    "@storybook/addon-onboarding": "^8.6.11",
+    "@storybook/nextjs": "^8.6.11",
+    "@storybook/react": "^8.6.11",
+    "@storybook/test": "^8.6.11",
     "@tailwindcss/postcss": "^4",
+    "@types/js-cookie": "^3.0.6",
     "@types/node": "^20",
+    "@types/qs": "^6.9.18",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "@types/react-i18next": "^8.1.0",
     "babel-plugin-transform-remove-console": "^6.9.4",
     "eslint": "^9",
     "eslint-config-next": "15.2.4",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "storybook-addon-themes": "^6.1.0",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
   }
 }
