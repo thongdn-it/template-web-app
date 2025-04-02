@@ -52,7 +52,7 @@ export default function Page() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <div className="grid grid-cols-5 gap-2">
+          <div className="grid grid-cols-2 gap-2 md:grid-cols-5">
             {data?.map((coffee) => (
               <CoffeeItemView
                 key={coffee.id}
