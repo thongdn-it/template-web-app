@@ -1,9 +1,11 @@
-import buttons from './buttons.json';
-import translation from './translation.json';
+import buttons from "./buttons.json";
+import errors from "./errors.json";
+import translation from "./translation.json";
 
 const resource = {
-  translation,
+  translation, // default namespace
   buttons,
+  errors,
 };
 
 export default resource;

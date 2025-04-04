@@ -1,4 +1,8 @@
 {
+  "email": "Email",
+  "email_placeholder": "Enter your email",
+  "password": "Password",
+  "password_placeholder": "Enter your password",
   "language": "English",
   "Hello": "Hello",
   "price": "Price: {{price, currency}}",

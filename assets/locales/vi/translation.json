@@ -1,4 +1,9 @@
 {
+  "email": "Email",
+  "email_placeholder": "Nhập email của bạn",
+  "password": "Mật khẩu",
+  "password_placeholder": "Nhập mật khẩu của bạn",
+
   "language": "Tiếng Việt",
   "Hello": "Xin chào",
   "price": "Giá: {{price, currency}}",

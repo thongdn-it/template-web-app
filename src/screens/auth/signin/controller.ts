@@ -1,10 +1,10 @@
 import { redirect } from "next/navigation";
 
-import { Routes } from "@configs";
+import { Routes } from "@constants";
 import { CookiesUtils } from "@utils";
 
 export const useSigninPageController = () => {
-  const signin = async () => {
+  const signin = async (email: string, password: string) => {
     const result = await CookiesUtils.saveTokens(
       "Bearer access_token",
       "refresh_token",

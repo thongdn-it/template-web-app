@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@components";
 import { useI18n } from "@hooks";
-import { Routes } from "@configs";
+import { Routes } from "@constants";
 import { useHomePageController } from "./controller";
 import { CoffeeItemView } from "./views/coffee-item-view";
 

@@ -1,7 +1,8 @@
-import { CoffeeModel, useGetListCoffeeQuery } from "@data";
-import { Routes } from "@src/configs";
-import { CookiesUtils } from "@src/utils";
 import { redirect } from "next/navigation";
+
+import { Routes } from "@constants";
+import { CookiesUtils } from "@utils";
+import { CoffeeModel, useGetListCoffeeQuery } from "@data";
 
 export const useHomePageController = () => {
   const { data, isLoading, error } = useGetListCoffeeQuery();
