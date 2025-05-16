@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import { useI18n } from "@hooks";
+// import { useI18n } from "@hooks";
 import { CoffeeModel } from "@data";
 
 export const CoffeeItemView = ({
@@ -10,11 +10,11 @@ export const CoffeeItemView = ({
   coffee: CoffeeModel;
   onPress?: (coffee: CoffeeModel) => void;
 }) => {
-  const { t } = useI18n();
+  // const { t } = useI18n();
 
   return (
     <div
-      className="cursor-pointer flex flex-col items-center"
+      className="flex cursor-pointer flex-col items-center"
       onClick={() => onPress?.(coffee)}
     >
       <Image
@@ -22,11 +22,11 @@ export const CoffeeItemView = ({
         alt="coffee-image"
         width={60}
         height={60}
-        className="w-[10vw] aspect-square h-auto rounded-lg"
+        className="aspect-square h-auto w-[10vw] rounded-lg"
       />
       <div className="flex justify-between gap-4">
         <span className="font-bold">{coffee.title}</span>
-        <span>{t("price", { price: coffee.price })}</span>
+        {/* <span>{t("price", { price: coffee.price })}</span> */}
       </div>
     </div>
   );
