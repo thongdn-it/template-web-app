@@ -8,12 +8,28 @@ export const apiRoute = new APIOpenAPIHono();
 
 // - Swagger UI - //
 const docPath = `doc-${randomString()}`;
-apiRoute.doc(`/${docPath}`, {
-  info: {
-    title: "Hono API Documentation",
-    version: "v1",
-  },
-  openapi: "3.1.0",
+apiRoute.doc(`/${docPath}`, (c) => {
+  return {
+    info: {
+      title: "Hono API Documentation",
+      version: "v1",
+    },
+    openapi: "3.1.0",
+    servers: [
+      {
+        url: `${new URL(c.req.url).origin}/api`,
+        description: "Development server",
+      },
+      {
+        url: "https://staging.hoantien.shop/api",
+        description: "Staging server",
+      },
+      {
+        url: "https://hoantien.shop/api",
+        description: "Production server",
+      },
+    ],
+  };
 });
 
 apiRoute.get(
@@ -28,19 +44,5 @@ apiRoute.get(
   Scalar({
     url: `/api/${docPath}`,
     pageTitle: "Hono API Document",
-    servers: [
-      {
-        url: "http://localhost:23600/api",
-        description: "Development server",
-      },
-      {
-        url: "https://staging.example.com/api",
-        description: "Staging server",
-      },
-      {
-        url: "https://example.com/api",
-        description: "Production server",
-      },
-    ],
   })
 );

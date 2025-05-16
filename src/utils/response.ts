@@ -1,43 +1,76 @@
-// src/utils/response.ts
-
 import { Context } from "hono";
-import { StatusCode } from "hono/utils/http-status";
+import { RedirectStatusCode } from "hono/utils/http-status";
 
 export const response = {
   success: <T>(
     c: Context,
     data: T,
-    statusCode: StatusCode = 200,
     opts?: {
+      code?: number;
       message?: string;
     }
   ) => {
     return c.json(
       {
         success: true,
+        code: opts?.code || 200,
+        message: opts?.message || "success",
         data,
-        message: opts?.message ?? "success",
       },
-      statusCode
+      200
     );
+  },
+  successWithPagination: <T>(
+    c: Context,
+    data: T[],
+    pagination: {
+      total: number;
+      page: number;
+      limit: number;
+    },
+    opts?: {
+      code?: number;
+      message?: string;
+    }
+  ) => {
+    return c.json(
+      {
+        success: true,
+        code: opts?.code || 200,
+        message: opts?.message || "success",
+        data: {
+          items: data,
+          pagination,
+        },
+      },
+      200
+    );
+  },
+  redirect: (
+    c: Context,
+    location: string | URL,
+    opts?: {
+      code?: RedirectStatusCode;
+    }
+  ) => {
+    return c.redirect(location, opts?.code);
   },
   error: (
     c: Context,
-    statusCode: StatusCode = 400,
+    errorCode?: number,
     opts?: {
-      errorCode?: number;
-      errorMessage?: string;
-      errorData?: any;
+      message?: string;
+      data?: any;
     }
   ) => {
     return c.json(
       {
         success: false,
-        message: opts?.errorMessage ?? "error",
-        code: opts?.errorCode ?? statusCode,
-        data: opts?.errorData ?? null,
+        code: errorCode || 400,
+        message: opts?.message || "error",
+        data: opts?.data ?? undefined,
       },
-      statusCode
+      400
     );
   },
 };
