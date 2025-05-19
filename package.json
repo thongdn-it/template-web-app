@@ -1,28 +1,44 @@
 {
-  "name": "be-app",
+  "name": "template-project",
+  "description": "A template project for Hono, Vite and Cloudflare Services.",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
+    "set-env-staging": "CLOUDFLARE_ENV=staging",
+    "set-env-production": "CLOUDFLARE_ENV=production",
     "clear": "rm -rf dist dist-server node_modules .wrangler pnpm-lock.yaml",
+    "build": "tsc -b && vite build",
+    "cf-typegen": "wrangler types",
+    "preview": "$npm_execpath run set-env-staging && $npm_execpath run build && vite preview",
+    "check-staging": "$npm_execpath run set-env-staging && tsc && vite build && wrangler deploy --dry-run",
+    "deploy-staging": "$npm_execpath run set-env-staging && $npm_execpath run build && wrangler deploy",
+    "check": "$npm_execpath run set-env-production && tsc && vite build && wrangler deploy --dry-run",
+    "deploy": "$npm_execpath run set-env-production && $npm_execpath run build && wrangler deploy",
     "dev": "vite",
-    "build": "vite build && vite build --ssr",
-    "preview": "$npm_execpath run build && wrangler dev --env production dist-server/index.js",
-    "deploy-staging": "$npm_execpath run build && wrangler deploy --env staging dist-server/index.js",
-    "deploy": "$npm_execpath run build && wrangler deploy --env production dist-server/index.js",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings"
+    "lint": "eslint ."
   },
   "dependencies": {
-    "@hono/zod-openapi": "^0.19.5",
-    "@scalar/hono-api-reference": "^0.8.5",
-    "hono": "^4.7.7",
-    "path": "^0.12.7",
-    "url": "^0.11.4",
-    "zod": "^3.24.3"
+    "@hono/zod-openapi": "^0.19.6",
+    "@scalar/hono-api-reference": "^0.8.10",
+    "hono": "4.7.7",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
-    "@cloudflare/vite-plugin": "^0.1.15",
-    "@hono/vite-build": "^1.5.0",
-    "vite": "^6.1.1",
-    "vite-plugin-ssr-hot-reload": "^0.4.1",
-    "wrangler": "^4.4.0"
+    "@cloudflare/vite-plugin": "1.0.8",
+    "@eslint/js": "9.25.1",
+    "@types/node": "22.14.1",
+    "@types/react": "19.0.10",
+    "@types/react-dom": "19.0.4",
+    "@vitejs/plugin-react": "4.4.1",
+    "eslint": "9.25.1",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-react-refresh": "0.4.19",
+    "globals": "15.15.0",
+    "typescript": "5.8.3",
+    "typescript-eslint": "8.31.0",
+    "vite": "6.3.2",
+    "wrangler": "4.15.2"
   }
 }

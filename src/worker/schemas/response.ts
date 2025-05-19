@@ -1,20 +1,21 @@
 import { z } from "zod";
+
 import { defaultSchema } from "./base";
 
 export const userSchema = z.object({
   id: z.string(),
   email: z.string().email(),
-  fullName: z.string().optional(),
-  createdAt: z.string().datetime(),
-  updatedAt: z.string().datetime(),
-  lastLogin: z.string().datetime().optional(),
-  isActive: z.boolean().default(true),
-  isVerified: z.boolean().default(false),
+  full_name: z.string().optional(),
+  created_at: z.string().datetime(),
+  updated_at: z.string().datetime(),
+  last_login: z.string().datetime().optional(),
+  is_active: z.boolean().default(true),
+  is_verified: z.boolean().default(false),
 });
 
 export const authSchema = z.object({
-  accessToken: z.string(),
-  refreshToken: z.string(),
+  access_token: z.string(),
+  refresh_token: z.string(),
   user: userSchema,
 });
 

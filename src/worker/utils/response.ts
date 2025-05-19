@@ -4,7 +4,7 @@ import { RedirectStatusCode } from "hono/utils/http-status";
 export const response = {
   success: <T>(
     c: Context,
-    data: T,
+    data: T | undefined,
     opts?: {
       code?: number;
       message?: string;
@@ -60,7 +60,7 @@ export const response = {
     errorCode?: number,
     opts?: {
       message?: string;
-      data?: any;
+      data?: unknown;
     }
   ) => {
     return c.json(

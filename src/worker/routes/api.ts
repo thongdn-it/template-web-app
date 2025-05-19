@@ -7,7 +7,7 @@ import { randomString } from "../utils";
 export const apiRoute = new APIOpenAPIHono();
 
 // - Swagger UI - //
-const docPath = `doc-${randomString()}`;
+export const docPath = `doc-${randomString()}`;
 apiRoute.doc(`/${docPath}`, (c) => {
   return {
     info: {
@@ -21,11 +21,11 @@ apiRoute.doc(`/${docPath}`, (c) => {
         description: "Development server",
       },
       {
-        url: "https://staging.hoantien.shop/api",
+        url: "https://staging.example.com/api",
         description: "Staging server",
       },
       {
-        url: "https://hoantien.shop/api",
+        url: "https://example.com/api",
         description: "Production server",
       },
     ],

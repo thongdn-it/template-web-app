@@ -1,4 +1,5 @@
 import { Hono } from "hono";
+
 import { apiRoute } from "./api";
 import { createAuthRoute } from "./auth";
 

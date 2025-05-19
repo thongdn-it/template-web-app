@@ -1,4 +1,5 @@
 import { z } from "zod";
+
 import { defaultSchema } from "./base";
 
 const { email: emailSchema, password: passwordSchema } = defaultSchema;
