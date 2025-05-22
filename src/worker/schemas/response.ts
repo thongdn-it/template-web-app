@@ -2,24 +2,34 @@ import { z } from "zod";
 
 import { defaultSchema } from "./base";
 
-export const userSchema = z.object({
-  id: z.string(),
-  email: z.string().email(),
-  full_name: z.string().optional(),
-  created_at: z.string().datetime(),
-  updated_at: z.string().datetime(),
-  last_login: z.string().datetime().optional(),
-  is_active: z.boolean().default(true),
-  is_verified: z.boolean().default(false),
-});
+const userSchema = z
+  .object({
+    id: z.string(),
+    email: z.string().email(),
+    full_name: z.string().optional(),
+    created_at: z.string().datetime(),
+    updated_at: z.string().datetime(),
+    is_active: z.boolean(),
+  })
+  .openapi("UserResponse");
 
-export const authSchema = z.object({
+const authSchema = z
+  .object({
+    access_token: z.string(),
+    refresh_token: z.string(),
+    user: userSchema,
+  })
+  .openapi("AuthResponse");
+
+const refreshTokenSchema = z.object({
   access_token: z.string(),
   refresh_token: z.string(),
-  user: userSchema,
 });
 
 export const responseSchema = {
-  error: defaultSchema.createErrorResponse(),
-  auth: defaultSchema.createSuccessResponse(authSchema),
+  error: defaultSchema.errorResponse(),
+  auth: defaultSchema.successObjectResponse(authSchema),
+  refreshToken: defaultSchema.successObjectResponse(refreshTokenSchema),
+  user: defaultSchema.successObjectResponse(userSchema),
+  users: defaultSchema.successPaginationResponse(userSchema),
 };
