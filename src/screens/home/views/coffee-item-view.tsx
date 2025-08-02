@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-// import { useI18n } from "@hooks";
+import { useI18n } from "@hooks";
 import { CoffeeModel } from "@data";
 
 export const CoffeeItemView = ({
@@ -8,9 +8,9 @@ export const CoffeeItemView = ({
   onPress,
 }: {
   coffee: CoffeeModel;
-  onPress?: (coffee: CoffeeModel) => void;
+  onPress?: (_coffee: CoffeeModel) => void;
 }) => {
-  // const { t } = useI18n();
+  const { t } = useI18n();
 
   return (
     <div
@@ -23,10 +23,11 @@ export const CoffeeItemView = ({
         width={60}
         height={60}
         className="aspect-square h-auto w-[10vw] rounded-lg"
+        unoptimized
       />
       <div className="flex justify-between gap-4">
         <span className="font-bold">{coffee.title}</span>
-        {/* <span>{t("price", { price: coffee.price })}</span> */}
+        <span>{t("price", { price: coffee.price })}</span>
       </div>
     </div>
   );

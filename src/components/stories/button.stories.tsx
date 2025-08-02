@@ -1,31 +1,37 @@
 import type { Meta, StoryObj } from "@storybook/react";
+
 import { Button } from "../ui/button";
 
-const meta: Meta<typeof Button> = {
-  title: "ShadCN/Button",
-  component: Button,
-  tags: ["autodocs"],
+const meta = {
+  title: "shadcn/Button",
   argTypes: {
     variant: {
-      control: "select",
+      control: { type: "select" },
       options: [
+        "link",
         "default",
         "destructive",
         "outline",
         "secondary",
         "ghost",
-        "link",
       ],
+      description: "The variant of the button",
     },
     size: {
-      control: "select",
+      control: { type: "select" },
       options: ["default", "sm", "lg", "icon"],
+      description: "The size of the button",
+    },
+    disabled: {
+      control: { type: "boolean" },
+      description: "Whether the button is disabled",
     },
   },
-};
+  component: Button,
+} satisfies Meta<typeof Button>;
 
 export default meta;
-type Story = StoryObj<typeof Button>;
+type Story = StoryObj<typeof meta>;
 
 const getCaptionForLocale = (locale: string) => {
   switch (locale) {
@@ -41,30 +47,8 @@ export const Default: Story = {
     variant: "default",
     size: "default",
   },
-  render: (args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Button {...args}>{caption}</Button>;
-  },
-};
-
-export const Destructive: Story = {
-  args: {
-    variant: "destructive",
-    size: "default",
-  },
-  render: (args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
-    return <Button {...args}>{caption}</Button>;
-  },
-};
-
-export const Outline: Story = {
-  args: {
-    variant: "outline",
-    size: "default",
-  },
-  render: (args, { globals: { locale } }) => {
-    const caption = getCaptionForLocale(locale);
+  render: (args, context) => {
+    const caption = getCaptionForLocale(context.globals.locale || "en");
     return <Button {...args}>{caption}</Button>;
   },
 };
