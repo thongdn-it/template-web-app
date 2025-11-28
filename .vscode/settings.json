@@ -2,5 +2,10 @@
   "i18n-ally.localesPaths": ["assets/locales"],
   "i18n-ally.namespace": true,
   "i18n-ally.defaultNamespace": "translation",
-  "i18n-ally.keystyle": "nested"
+  "i18n-ally.keystyle": "nested",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.formatOnSave": true
 }

@@ -1,7 +1,7 @@
 {
   "name": "TWA",
   "short_name": "TWA",
-  "description": "Hoàn Tiền AI - Ứng dụng hoàn tiền hàng đầu Việt Nam",
+  "description": "Template Web App",
   "id": "thongdn.template-web-app",
   "start_url": "/?source=pwa",
   "display": "standalone",

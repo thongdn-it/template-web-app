@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { Routes } from "@src/constants";
+import { Routes } from "@constants";
 import { CookiesKeys } from "@utils";
 
 // 1. Specify protected and public routes

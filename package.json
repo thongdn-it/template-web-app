@@ -1,12 +1,22 @@
 {
-  "name": "web-app",
+  "name": "template-web-app",
+  "description": "A starter template for web application using Next.js, TypeScript, Tailwind CSS, React Query, React Hook Form, Shadcn UI, i18next, and more.",
   "version": "1.0.0",
   "private": true,
+  "author": {
+    "name": "Thong Dang",
+    "email": "thongdn.it@gmail.com",
+    "url": "https://github.com/thongdn-it"
+  },
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/thongdn-it/template-web-app"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
     "clear": "rm -rf .next node_modules pnpm-lock.yaml",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
@@ -42,17 +52,15 @@
     "zod": "^4.1.13"
   },
   "devDependencies": {
-    "@chromatic-com/storybook": "^3.2.7",
+    "@chromatic-com/storybook": "^4.1.3",
     "@eslint/eslintrc": "^3.3.1",
     "@next/eslint-plugin-next": "^16.0.5",
-    "@storybook/addon-essentials": "^8.6.14",
-    "@storybook/addon-interactions": "^8.6.14",
-    "@storybook/addon-links": "^8.6.14",
-    "@storybook/addon-onboarding": "^8.6.14",
-    "@storybook/cli": "^8.6.14",
-    "@storybook/nextjs": "^8.6.14",
-    "@storybook/react": "^8.6.14",
-    "@storybook/test": "^8.6.14",
+    "@storybook/addon-docs": "^10.1.1",
+    "@storybook/addon-links": "^10.1.1",
+    "@storybook/addon-onboarding": "^10.1.1",
+    "@storybook/cli": "^10.1.1",
+    "@storybook/nextjs": "^10.1.1",
+    "@storybook/react": "^10.1.1",
     "@tailwindcss/postcss": "^4",
     "@types/js-cookie": "^3.0.6",
     "@types/node": "^24",
@@ -64,10 +72,10 @@
     "eslint": "^9",
     "eslint-config-next": "16.0.5",
     "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-storybook": "10.1.1",
     "prettier": "^3.6.2",
     "prettier-plugin-tailwindcss": "^0.7.1",
-    "storybook": "^8.6.14",
-    "storybook-addon-themes": "^6.1.0",
+    "storybook": "^10.1.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   },

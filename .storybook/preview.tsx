@@ -1,6 +1,6 @@
 import React from "react";
 
-import type { Preview } from "@storybook/react";
+import type { Preview } from "@storybook/nextjs";
 
 import "../src/app/globals.css";
 import { ThemeProvider } from "../src/components/providers/ThemeProvider";

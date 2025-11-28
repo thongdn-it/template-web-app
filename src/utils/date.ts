@@ -1,5 +1,5 @@
-import { enUS, vi } from "date-fns/locale";
 import { Locale as DateLocale, setDefaultOptions } from "date-fns";
+import { enUS, vi } from "date-fns/locale";
 
 import { Locale } from "./i18n";
 

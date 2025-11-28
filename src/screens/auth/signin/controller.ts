@@ -4,7 +4,7 @@ import { Routes } from "@constants";
 import { CookiesUtils } from "@utils";
 
 export const useSigninPageController = () => {
-  const signin = async (email: string, password: string) => {
+  const signin = async (_email: string, _password: string) => {
     const result = await CookiesUtils.saveTokens(
       "Bearer access_token",
       "refresh_token",

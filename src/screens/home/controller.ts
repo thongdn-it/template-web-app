@@ -1,14 +1,14 @@
 import { redirect } from "next/navigation";
 
 import { Routes } from "@constants";
+import { WineModel, useGetWineListQuery } from "@data";
 import { CookiesUtils } from "@utils";
-import { CoffeeModel, useGetListCoffeeQuery } from "@data";
 
 export const useHomePageController = () => {
-  const { data, isLoading, error } = useGetListCoffeeQuery();
+  const { data, isLoading, error } = useGetWineListQuery();
 
-  const onCoffeeItemClick = (coffee: CoffeeModel) => {
-    redirect(Routes.detail.default(coffee.id));
+  const onWineItemClick = (wine: WineModel) => {
+    redirect(Routes.detail.default(wine.id));
   };
 
   const onSignOutClick = () => {
@@ -20,7 +20,7 @@ export const useHomePageController = () => {
     data: data?.data,
     error: error,
     isLoading,
-    onCoffeeItemClick,
+    onWineItemClick,
     onSignOutClick,
   };
 };

@@ -1,7 +1,7 @@
 "use client";
 
-import Link from "next/link";
 import { LogOut, Menu, Settings } from "lucide-react";
+import Link from "next/link";
 
 import {
   ClientPage,
@@ -10,13 +10,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@components";
-import { useI18n } from "@hooks";
 import { Routes } from "@constants";
+import { useI18n } from "@hooks";
 import { useHomePageController } from "./controller";
-import { CoffeeItemView } from "./views/coffee-item-view";
+import { WineItemView } from "./views/wine-item-view";
 
 export default function Page() {
-  const { data, isLoading, onCoffeeItemClick, onSignOutClick } =
+  const { data, isLoading, onWineItemClick, onSignOutClick } =
     useHomePageController();
   const { t } = useI18n();
 
@@ -52,12 +52,12 @@ export default function Page() {
               </DropdownMenuContent>
             </DropdownMenu>
           </div>
-          <div className="grid grid-cols-2 gap-2 md:grid-cols-5">
-            {data?.map((coffee) => (
-              <CoffeeItemView
-                key={coffee.id}
-                coffee={coffee}
-                onPress={onCoffeeItemClick}
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-4 lg:grid-cols-5">
+            {data?.map((wine) => (
+              <WineItemView
+                key={wine.id}
+                wine={wine}
+                onPress={onWineItemClick}
               />
             ))}
           </div>

@@ -1,1 +1,1 @@
-export * from "./coffee-query";
+export * from "./wine-query";

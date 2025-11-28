@@ -1,8 +1,8 @@
 "use client";
 
-import { ThemeProvider } from "./ThemeProvider";
-import { QueryProvider } from "./QueryProvider";
 import { LanguageProvider } from "./LanguageProvider";
+import { QueryProvider } from "./QueryProvider";
+import { ThemeProvider } from "./ThemeProvider";
 
 export const AppProvider = ({
   children,

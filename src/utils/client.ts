@@ -1,6 +1,6 @@
-import qs from "qs";
-import curlirize from "axios-curlirize-ts";
 import axios, { AxiosInstance } from "axios";
+import curlirize from "axios-curlirize-ts";
+import qs from "qs";
 
 class BaseClient {
   private readonly _axios: AxiosInstance;
@@ -13,7 +13,7 @@ class BaseClient {
       headers?: { [key: string]: string };
       timeout?: number;
       logCurl?: boolean;
-    }
+    },
   ) {
     this._axios = axios.create({
       baseURL: baseURL,
