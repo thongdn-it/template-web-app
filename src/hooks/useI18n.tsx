@@ -1,16 +1,17 @@
 "use client";
+
 import React from "react";
 
 import { TOptionsBase } from "i18next";
-import { useTranslation } from "react-i18next";
 import IntlPluralRules from "intl-pluralrules/plural-rules";
+import { useTranslation } from "react-i18next";
 
-import { setDateLocale, Locale, Namespace } from "@utils";
+import { Locale, Namespace, setDateLocale } from "@utils";
 
 export const useI18n = () => {
   const { t: tI18n, i18n, ready } = useTranslation();
   const [language, setLanguage] = React.useState<Locale>(
-    i18n.language as Locale
+    i18n.language as Locale,
   );
 
   const changeLanguage = (lng: Locale) => {
@@ -25,7 +26,7 @@ export const useI18n = () => {
       | (Omit<TOptionsBase, "ns"> & { [key: string]: unknown } & {
           ns?: Namespace;
         })
-      | undefined
+      | undefined,
   ) => {
     return tI18n(key, options);
   };

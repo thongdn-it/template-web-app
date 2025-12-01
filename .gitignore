@@ -43,3 +43,21 @@ next-env.d.ts
 # storybook
 *storybook.log
 storybook-static
+
+# IDEs
+.vscode/
+.idea/
+
+# caches
+.cache/
+.turbo/
+.parcel-cache/
+
+# misc
+.eslintcache
+.nyc_output/
+dist/
+
+# firebase local files
+.firebase/
+firebase-debug.*

@@ -1,8 +1,9 @@
 {
   "name": "template-web-app",
-  "description": "A starter template for web application using Next.js, TypeScript, Tailwind CSS, React Query, React Hook Form, Shadcn UI, i18next, and more.",
+  "description": "A starter template for web applications using Next.js, Tailwind CSS, and Storybook.",
   "version": "1.0.0",
   "private": true,
+  "license": "MIT",
   "author": {
     "name": "Thong Dang",
     "email": "thongdn.it@gmail.com",
@@ -12,6 +13,11 @@
     "type": "github",
     "url": "https://github.com/thongdn-it/template-web-app"
   },
+  "keywords": [
+    "template",
+    "nextjs",
+    "firebase"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -24,6 +30,7 @@
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
     "@next/env": "^16.0.5",
+    "@radix-ui/react-dialog": "^1.1.15",
     "@radix-ui/react-dropdown-menu": "^2.1.16",
     "@radix-ui/react-label": "^2.1.8",
     "@radix-ui/react-slot": "^1.2.4",
@@ -34,6 +41,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
+    "firebase": "^12.6.0",
     "i18next": "^25.6.3",
     "i18next-browser-languagedetector": "^8.2.0",
     "i18next-intervalplural-postprocessor": "^3.0.0",

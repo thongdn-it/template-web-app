@@ -1,1 +1,1 @@
-export * from "./wine-query";
+export * from "./color-query";

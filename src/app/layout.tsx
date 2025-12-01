@@ -1,11 +1,10 @@
 import "@utils";
 import "./globals.css";
 
-import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 
-import { AppProvider } from "@components";
-import { defaultLng } from "@utils";
+import { AppProvider, Footer, Header } from "@components";
+import { defaultLng } from "@constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,10 +16,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "Template Next App",
-  description: "Developed by Thong Dang",
-};
+export { metadata, viewport } from "../constants/metadata";
 
 export default function RootLayout({
   children,
@@ -35,7 +31,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <AppProvider>{children}</AppProvider>
+        <AppProvider>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </AppProvider>
       </body>
     </html>
   );

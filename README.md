@@ -1,246 +1,200 @@
 # Template Web App
 
-A modern, production-ready Next.js starter template with TypeScript, featuring a complete development stack for building scalable web applications.
+A modern Next.js starter template (App Router) using TypeScript, preconfigured with common tools and patterns for building scalable web applications.
 
-## ✨ Features
+Core stack: Next.js 16 · React 19 · TypeScript
 
-- **Next.js 16** with App Router and Turbopack
-- **TypeScript** for type safety
-- **Tailwind CSS 4** for styling
-- **shadcn/ui** for beautiful UI components
-- **Dark Mode** support with next-themes
-- **Internationalization** (i18n) with react-i18next
-- **Data Fetching** with TanStack Query and Axios
-- **Form Management** with React Hook Form and Zod validation
-- **Storybook 10** for component development
-- **ESLint** configured for code quality
 
-## 🚀 Quick Start
+## Features
 
-### Prerequisites
+- Next.js 16 (App Router) with Turbopack for fast local development
+- TypeScript (strict mode)
+- Tailwind CSS and `shadcn/ui` (Radix) for reusable UI components
+- Dark mode with `next-themes`
+- Firebase Authentication (email/password + Google)
+- Internationalization with `react-i18next` (English and Vietnamese)
+- TanStack Query + Axios for data fetching and caching
+- React Hook Form + Zod for forms and validation
+- Storybook for component development
+- ESLint and Prettier configured
 
-- Node.js 18+
-- pnpm (recommended) or npm
 
-### Installation
+## Quick Start
+
+Requirements: Node.js >= 20, `pnpm` (recommended) or `npm`.
 
 ```bash
-# Clone the repository
-git clone https://github.com/thongdn-it/template-web-app.git
-
-# Navigate to project directory
+# clone
+git clone https://github.com/thongdn-it/template-web-app.git -b nextJS
 cd template-web-app
 
-# Install dependencies
+# install dependencies
 pnpm install
 
-# Run development server
+# run dev server
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open http://localhost:3000
 
-## 📦 Available Scripts
+
+## Useful Scripts
 
 ```bash
-pnpm dev              # Start development server with Turbopack
+pnpm dev              # Start development server (Turbopack)
 pnpm build            # Build for production
 pnpm start            # Start production server
 pnpm lint             # Run ESLint
-pnpm storybook        # Start Storybook on port 6006
-pnpm build-storybook  # Build Storybook for production
-pnpm clear            # Clean cache and dependencies
+pnpm storybook        # Run Storybook (port 6006)
+pnpm build-storybook  # Build Storybook
+pnpm clear            # Clean .next, node_modules, lockfile
 ```
 
-## 🛠️ Tech Stack
 
-| Library         | Version | Description                              |
-| --------------- | ------- | ---------------------------------------- |
-| Next.js         | 16.0.5  | React framework with App Router          |
-| React           | 19.2.0  | UI library                               |
-| TypeScript      | 5.x     | Type-safe JavaScript                     |
-| Tailwind CSS    | 4.x     | Utility-first CSS framework              |
-| shadcn/ui       | latest  | Re-usable components built with Radix UI |
-| TanStack Query  | 5.90.11 | Data fetching and caching                |
-| React Hook Form | 7.66.1  | Form state management                    |
-| Zod             | 4.1.13  | Schema validation                        |
-| i18next         | 25.6.3  | Internationalization framework           |
-| Storybook       | 10.1.1  | Component development environment        |
-| Axios           | 1.13.2  | HTTP client                              |
-| Lucide React    | 0.555.0 | Icon library                             |
+## Environment Variables
 
-## 📁 Project Structure
+Add a `.env.local` with the values you need. Example:
+
+```env
+NEXT_PUBLIC_API_URL=https://api.sampleapis.com/
+NEXT_PUBLIC_SITE_URL=https://example.com
+NEXT_PUBLIC_REPO_URL=https://github.com/thongdn-it/template-web-app
+NEXT_PUBLIC_LICENSE=MIT
+
+# Firebase (if used)
+NEXT_PUBLIC_FIREBASE_API_KEY=...
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=...
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=...
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=...
+NEXT_PUBLIC_FIREBASE_APP_ID=...
+```
+
+
+## Project Structure
 
 ```
 template-web-app/
 ├── .storybook/              # Storybook configuration
-├── assets/                  # Static assets
-│   ├── fonts/                  # Font files
-│   ├── images/                 # Images
-│   └── locales/                # Translation files (en, vi)
+├── assets/                  # Static assets and locales
 ├── public/                  # Public static files
 ├── src/
-│   ├── app/                # Next.js App Router
-│   │   ├── layout.tsx      # Root layout
-│   │   ├── page.tsx        # Home page
-│   │   └── (auth)/         # Auth routes group
-│   ├── components/         # React components
-│   │   ├── providers/      # Context providers
-│   │   ├── shared/         # Shared components
-│   │   ├── stories/        # Storybook stories
-│   │   └── ui/             # shadcn/ui components
-│   ├── constants/          # App constants
-│   │   ├── route.ts        # Route definitions
-│   │   └── schema.ts       # Validation schemas
-│   ├── data/               # Data layer
-│   │   ├── api/            # API clients
-│   │   ├── models/         # Data models
-│   │   └── queries/        # TanStack Query hooks
-│   ├── hooks/              # Custom React hooks
-│   ├── screens/            # Feature screens
-│   │   └── [feature]/
-│   │       ├── controller.ts  # Business logic
-│   │       ├── page.tsx       # UI component
-│   │       └── views/         # Sub-components
-│   ├── services/           # External services
-│   ├── utils/              # Utility functions
-│   └── db/                 # Database utilities
+│   ├── app/                 # App Router (layout, pages)
+│   ├── components/          # UI components and shared widgets
+│   ├── constants/           # App constants
+│   ├── data/                # API clients and queries
+│   ├── hooks/               # Custom hooks
+│   ├── screens/             # Feature screens (controller-page pattern)
+│   ├── services/            # External services (Firebase, analytics)
+│   └── utils/               # Utility helpers
 └── ...
 ```
 
-## 🎨 Architecture Patterns
 
-### Controller-Page Pattern
+## Architecture Patterns
 
-Each feature follows a clean separation between UI and logic:
+ - Controller-Page: separate UI (`page.tsx`) and business logic (`controller.ts`) per screen.
+ - API client extension: extend the central API client using declaration merging and wrap calls in TanStack Query hooks.
+ - Path aliases: use `@components`, `@hooks`, `@constants`, etc. defined in `tsconfig.json`.
 
-```typescript
-// screens/home/controller.ts - Business logic
+## Example: Controller-Page
+
+```ts
+// screens/home/controller.ts
 export const useHomePageController = () => {
   const { data, isLoading } = useGetDataQuery();
-  const handleClick = () => { /* logic */ };
+  const handleClick = () => { /* ... */ };
   return { data, isLoading, handleClick };
 };
 
-// screens/home/page.tsx - UI implementation
+// screens/home/page.tsx
 export default function HomePage() {
   const { data, isLoading, handleClick } = useHomePageController();
   return <div>{/* UI */}</div>;
 }
 ```
 
-### API Client Pattern
 
-API methods are added via declaration merging:
+## Internationalization (i18n)
 
-```typescript
-// data/api/clients/wine-client.ts
-declare module "../client" {
-  interface APIClient {
-    getWineList: () => Promise<BaseResponse<WineModel[]>>;
-  }
-}
+- Translations live in `assets/locales/{en,vi}`. Default namespace is `translation`.
+- Use the `useI18n()` hook to access `t()` and `changeLanguage()`.
 
-APIClient.prototype.getWineList = async function () {
-  return this.client.get("/wines/reds");
-};
-```
-
-Then wrapped in TanStack Query hooks:
-
-```typescript
-// data/queries/wine-query.ts
-export const useGetWineListQuery = () => {
-  return useQuery({
-    queryKey: ["wine-list"],
-    queryFn: apiClient.getWineList,
-  });
-};
-```
-
-### Path Aliases
-
-Use TypeScript path aliases for clean imports:
-
-```typescript
-import { Button } from "@components";
-import { Routes } from "@constants";
-import { useI18n } from "@hooks";
-import { apiClient } from "@data";
-```
-
-## 🌐 Internationalization
-
-Translation files are organized by namespace in `assets/locales/{en,vi}/`:
-
-```typescript
+```tsx
 const { t } = useI18n();
-
-// Default namespace (translation)
-t("welcome");
-
-// Specific namespace
-t("signin", { ns: "buttons" });
+return <h1>{t('welcome')}</h1>;
 ```
 
-## 🎯 Adding UI Components
 
-Install shadcn/ui components:
+## Authentication (Firebase)
+
+- Firebase helpers are in `src/services/firebase`.
+- `useAuth()` exposes common actions: sign in/up, sign out, link/unlink providers.
+- The project includes an email-first login dialog with provider detection and explicit linking flow: `src/components/shared/login-dialog`.
+
+
+## Provider Nesting
+
+Keep the provider order in `src/components/providers/index.tsx`:
+
+```tsx
+<FirebaseProvider>
+  <ThemeProvider>
+    <LanguageProvider>
+      <QueryProvider>{children}</QueryProvider>
+    </LanguageProvider>
+  </ThemeProvider>
+</FirebaseProvider>
+```
+
+
+## Adding UI Components (shadcn/ui)
+
+Install a component via shadcn:
 
 ```bash
 pnpm dlx shadcn@latest add button
-pnpm dlx shadcn@latest add form
 ```
 
-Components are added to `src/components/ui/` and re-exported through `@components`.
+Components live in `src/components/ui/` and are re-exported via `src/components/index.ts`.
 
-## 🔧 Environment Variables
 
-Create a `.env.local` file:
+## Code Quality
 
-```env
-NEXT_PUBLIC_API_URL=https://api.sampleapis.com/
-```
+- ESLint + Prettier
+- TypeScript strict checks
 
-## 📝 Code Quality
 
-- **Auto-format on save** - Prettier integration
-- **Auto-organize imports** - ESLint configuration
-- **Type checking** - TypeScript strict mode
-- **Linting** - ESLint with Next.js and React rules
+## Deployment
 
-## 🚢 Deployment
-
-### Vercel (Recommended)
+Recommended: Vercel (supports App Router well).
 
 ```bash
-# Install Vercel CLI
 pnpm add -g vercel
-
-# Deploy
 vercel
 ```
 
-## 📄 License
 
-This project is open-source and available under the MIT License.
+## License
+
+This project defaults to the MIT license. Update the `LICENSE` file if you prefer a different license.
+
 
 ## 👤 Author
 
 **Thong Dang**
-
+ 
 - Email: thongdn.it@gmail.com
 - GitHub: [@thongdn-it](https://github.com/thongdn-it)
 - Website: [https://github.com/thongdn-it](https://github.com/thongdn-it)
 
----
-
+ 
 <p align="center">
   <a href="https://www.buymeacoffee.com/thongdn.it">
     <img src="https://media.giphy.com/media/hXMGQqJFlIQMOjpsKC/giphy.gif" alt="Buy me a coffee" width="200" />
   </a>
 </p>
-
+ 
 <p align="center">
   If you find this template helpful, please consider giving it a ⭐️
 </p>

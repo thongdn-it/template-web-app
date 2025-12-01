@@ -5,9 +5,12 @@ const nextConfig: NextConfig = {
     remotePatterns: [],
   },
   compiler: {
-    removeConsole: {
-      exclude: ["error"],
-    },
+    removeConsole:
+      process.env.NODE_ENV === "production"
+        ? {
+            exclude: ["error"],
+          }
+        : false,
   },
 };
 

@@ -1,10 +1,15 @@
 export * from "./providers";
 
 export * from "./shared/client-page";
+export * from "./shared/footer";
+export * from "./shared/header";
 export * from "./shared/language-button";
+export * from "./shared/login-dialog";
+export * from "./shared/profile-dropdown";
 export * from "./shared/theme-button";
 
 export * from "./ui/button";
+export * from "./ui/dialog";
 export * from "./ui/dropdown-menu";
 export * from "./ui/form";
 export * from "./ui/input";

@@ -1,1 +1,1 @@
-export * from "./wine-client";
+export * from "./color-client";

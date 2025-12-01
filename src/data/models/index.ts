@@ -1,1 +1,1 @@
-export * from "./wine";
+export * from "./color";
