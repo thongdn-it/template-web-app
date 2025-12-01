@@ -4,6 +4,7 @@ A modern Next.js starter template (App Router) using TypeScript, preconfigured w
 
 Core stack: Next.js 16 · React 19 · TypeScript
 
+Live demo: [https://template-web-app.vercel.app/](https://template-web-app.vercel.app/)
 
 ## Features
 
