@@ -6,22 +6,24 @@ import Image from "next/image";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 
+import { useAuth, useI18n } from "@hooks";
+import { Button } from "@src/components/ui/button";
 import {
-  Button,
   Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
   DialogTitle,
+} from "@src/components/ui/dialog";
+import {
   Form,
   FormControl,
   FormField,
   FormItem,
   FormLabel,
   FormMessage,
-  Input,
-} from "@components";
-import { useAuth, useI18n } from "@hooks";
+} from "@src/components/ui/form";
+import { Input } from "@src/components/ui/input";
 
 interface LoginDialogProps {
   open: boolean;

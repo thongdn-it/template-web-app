@@ -9,7 +9,8 @@ declare module "../client" {
 }
 
 APIClient.prototype.getColorList = async function () {
-  return apiClient.client.get(
-    `${process.env.NEXT_PUBLIC_API_URL}/csscolornames/colors`,
+  const res = await apiClient.client.get<{ colors: ColorModel[] }>(
+    "https://www.csscolorsapi.com/api/colors",
   );
+  return { ...res, data: res.data.colors };
 };

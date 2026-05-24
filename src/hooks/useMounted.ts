@@ -1,13 +1,14 @@
 "use client";
 
-import React from "react";
+import { useEffect, useState } from "react";
 
-export const useMounted = () => {
-  const [mounted, setMounted] = React.useState(false);
+export function useIsMounted(): boolean {
+  const [isMounted, setIsMounted] = useState(false);
 
-  React.useEffect(() => {
-    setMounted(true);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setIsMounted(true);
   }, []);
 
-  return mounted;
-};
+  return isMounted;
+}

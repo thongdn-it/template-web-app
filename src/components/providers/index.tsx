@@ -1,6 +1,7 @@
 "use client";
 
 import { FirebaseProvider } from "@services";
+import { DirectionProvider } from "../ui/direction";
 import { LanguageProvider } from "./LanguageProvider";
 import { QueryProvider } from "./QueryProvider";
 import { ThemeProvider } from "./ThemeProvider";
@@ -11,12 +12,14 @@ export const AppProvider = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <FirebaseProvider>
+    <DirectionProvider>
       <ThemeProvider>
         <LanguageProvider>
-          <QueryProvider>{children}</QueryProvider>
+          <FirebaseProvider>
+            <QueryProvider>{children}</QueryProvider>
+          </FirebaseProvider>
         </LanguageProvider>
       </ThemeProvider>
-    </FirebaseProvider>
+    </DirectionProvider>
   );
 };

@@ -1,6 +1,6 @@
 "use client";
 
-import { ProfileDropdown } from "@components";
+import { ProfileDropdown } from "../profile-dropdown";
 
 export const Header = () => {
   return (

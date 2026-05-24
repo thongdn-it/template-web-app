@@ -1,12 +1,12 @@
 "use client";
 
+import { useI18n } from "@hooks";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@components";
-import { useI18n } from "@hooks";
+} from "@src/components/ui/dropdown-menu";
 import { supportedLngs } from "@utils";
 
 export const LanguageButton = () => {

@@ -23,7 +23,9 @@ export const useI18n = () => {
   const t = (
     key: string | TemplateStringsArray | (string | TemplateStringsArray)[],
     options?:
-      | (Omit<TOptionsBase, "ns"> & { [key: string]: unknown } & {
+      | ((Omit<TOptionsBase, "ns"> & { [key: string]: unknown } & {
+          context?: string | undefined;
+        }) & {
           ns?: Namespace;
         })
       | undefined,

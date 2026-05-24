@@ -17,7 +17,7 @@ export const Footer = () => {
     <footer className="mt-8 border-t py-6">
       <div className="text-muted-foreground container mx-auto flex max-w-7xl flex-col items-center justify-between px-4 text-sm sm:flex-row md:px-6">
         <div>
-          <span className="mr-2">
+          <span className="mr-2" suppressHydrationWarning>
             {t("footer.copyright", {
               year: new Date().getFullYear(),
               appName: t("app.name"),

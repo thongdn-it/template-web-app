@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import { useMounted } from "@hooks";
+import { useIsMounted } from "@hooks";
 
 /**
  * Checks if the component is mounted on the client side.
@@ -13,7 +13,7 @@ export const ClientPage = ({
 }: Readonly<{
   children: React.ReactNode;
 }>) => {
-  const mounted = useMounted();
+  const mounted = useIsMounted();
 
   return (
     <div suppressHydrationWarning>

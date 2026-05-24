@@ -2,8 +2,8 @@
 
 import { useState } from "react";
 
-import { ClientPage } from "@components";
 import { useI18n } from "@hooks";
+import { ClientPage } from "@src/components/shared/client-page";
 import { useHomePageController } from "./controller";
 import { ColorItemView } from "./views/color-item-view";
 
@@ -51,7 +51,7 @@ export default function HomePage() {
             </div>
           </div>
         ) : data && data.length > 0 ? (
-          <div className="grid grid-cols-4 gap-3 md:grid-cols-6 lg:grid-cols-8 xl:grid-cols-10">
+          <div className="grid grid-cols-4 gap-3 md:grid-cols-6 lg:grid-cols-8">
             {data.map((color) => (
               <ColorItemView
                 key={color.id}

@@ -27,10 +27,16 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
+    lng: defaultLng,
     supportedLngs,
     fallbackLng: defaultLng,
     ns: namespaces,
     defaultNS: namespaces[0],
+
+    detection: {
+      // Disable auto-detection caches to prevent server/client mismatch
+      caches: [],
+    },
 
     interpolation: {
       escapeValue: false,

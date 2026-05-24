@@ -18,7 +18,7 @@ export const ColorItemView = ({
     >
       <div
         className="h-24 w-24 rounded-lg border border-gray-100 shadow-md"
-        style={{ backgroundColor: color.hex }}
+        style={{ backgroundColor: `#${color.hex}` }}
         aria-label={color.name}
       />
 
